@@ -1,6 +1,8 @@
 import io from "socket.io-client";
 import React, { useState } from "react";
 import Chat from "../src/Chat";
+import "./App.css";
+
 const socket = io.connect("http://localhost:4000");
 function App() {
   const [username, setUsername] = useState("");
@@ -14,9 +16,9 @@ function App() {
     }
   };
   return (
-    <div>
+    <div className="App">
       {!showChat ? (
-        <div>
+        <div className="joinChatContainer">
           <h3>Join a Chat</h3>
           <input
             type="text"
